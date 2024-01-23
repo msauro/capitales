@@ -32,7 +32,7 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
 
     inner class CountryViewHolder(private val binding: CountryListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(country: Country){
-            binding.countryFlag.text = country.flag
+            binding.countryFlag.text = country.name.common
         }
     }
 }
