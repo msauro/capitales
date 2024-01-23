@@ -16,7 +16,7 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
             return oldItem === newItem
         }
         override fun areContentsTheSame (oldItem: Country, newItem: Country): Boolean{
-            return oldItem.area == newItem.area
+            return oldItem.flag == newItem.flag
         }
     }
 

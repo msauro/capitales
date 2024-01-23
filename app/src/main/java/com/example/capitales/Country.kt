@@ -5,7 +5,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Country (//@field:Json(name = "fifa") val id:String,
-                    val area:Int,
+                    //val area:Int,
                    val flag: String
                     //val region: String
                     //val capital: String,
