@@ -2,6 +2,7 @@ package com.example.capitales.countryList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,11 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
         }
     }
 
+    private var onItemClickListener: ((Country) -> Unit)? = null
+    fun setOnItemClickListener(onItemClickListener: (Country)-> Unit){
+        this.onItemClickListener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         val binding = CountryListItemBinding.inflate(LayoutInflater.from(parent.context))
         return CountryViewHolder(binding)
@@ -33,6 +39,9 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
     inner class CountryViewHolder(private val binding: CountryListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(country: Country){
             binding.countryFlag.text = country.name.common
+            binding.countryFlag.setOnClickListener{
+            onItemClickListener?.invoke(country)
+            }
         }
     }
 }

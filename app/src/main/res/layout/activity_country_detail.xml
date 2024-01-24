@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="country" type="com.example.capitales.Country"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondary_background">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingBottom="200dp"
+            android:scrollbars="none">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/country_map"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="356dp"
+                    android:adjustViewBounds="true"
+                    android:elevation="8dp"
+                    android:contentDescription="@string/country_map_attribute" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/detail_info_background"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp">
+                    <TextView
+                        android:id="@+id/dog_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@{country.flag}"
+                        android:textColor="@color/text_black"
+                        android:textSize="32sp" tools:text="Argentine Republic"/>
+
+                    <ImageView
+                        android:id="@+id/country_flag"
+                        android:layout_width="150dp"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:adjustViewBounds="true"
+                        android:textColor="@color/text_black"
+                        android:elevation="8dp" tools:text="Trapo"
+                        android:contentDescription="@string/country_flag_attribute" />
+
+                    <TextView
+                        android:id="@+id/population"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/text_black"
+                        android:text="@{Double.toString(country.population)}"
+                        android:textSize="16sp" tools:text="Habitantes: 45376763"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:text="@{Double.toString(country.area)}"
+                        android:textColor="@color/text_black"
+                        android:textSize="16sp" tools:text="Superficie: 2780400 km2"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/divider"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/borders"
+                                android:textColor="@color/text_black"/>
+
+                            <TextView
+                                android:id="@+id/temperament"
+                                style="@style/DetailSectionInfo"
+                                android:layout_width="117dp"
+                                android:layout_height="56dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@{country.region}"
+                                tools:text="BOL,BRA,CHL,PRY,URY" />
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/divider"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView style="@style/DetailSectionName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/region"/>
+                            <TextView style="@style/DetailSectionInfo"
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@{country.region}" tools:text="America"/>
+                            <TextView style="@style/DetailSectionName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/subregion"/>
+                            <TextView
+                                android:id="@+id/intelligence" style="@style/DetailSectionInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@{country.region}" tools:text="Sud America"/>
+
+                        </LinearLayout>
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="60dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@color/divider"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/fifa"
+                                android:textColor="@color/text_black"/>
+                            <TextView
+                                android:id="@+id/weight" style="@style/DetailSectionInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@{country.fifa}" tools:text="ARG"/>
+                            <TextView style="@style/DetailSectionName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/translations"/>
+                            <TextView
+                                android:id="@+id/translations" style="@style/DetailSectionInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@{country.translations.spa.official}" tools:text="Argentina"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+        </ScrollView>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/details_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/close_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_margin="24dp"
+            android:elevation="4dp"
+            android:src="@drawable/ic_check"
+            android:importantForAccessibility="no" />
+        <ProgressBar
+            android:id="@+id/loading_wheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center" android:indeterminate="true" android:indeterminateTint="@color/colorPrimaryDark" android:indeterminateTintMode="src_atop" android:visibility="gone"/>
+    </FrameLayout>
+</layout>
+
+

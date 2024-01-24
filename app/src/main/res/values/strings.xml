@@ -1,3 +1,28 @@
+
 <resources>
-    <string name="app_name">Capitales</string>
+<string name="app_name">Capitales</string>
+<string name="borders">Limitrofes</string>
+<string name="area">Superficie: %d</string>
+<string name="translations">En Español:</string>
+<string name="region">Región</string>
+<string name="subregion">Subregion</string>
+<string name="population">Habitantes: %d</string>
+<string name="fifa">Fifa</string>
+<string name="error_showing_country_not_found">Error showing country, country not found</string>
+<string name="flags">#%d</string>
+<string name="dog_life_expectancy_format">%s years</string>
+<string name="unknow_host_exception_error">There is no internet connection</string>
+<string name="unknow_error">Unknow Error</string>
+<string name="do_not_have_an_account"> Do not have an account </string>
+<string name="login">Login</string>
+<string name="password">Password</string>
+<string name="email">Email</string>
+<string name="sign_up">SingUp</string>
+<string name="confirm_password">Confirm Password</string>
+<string name="register">Register</string>
+<string name="email_is_not_valid">Email is not valid</string>
+<string name="password_must_not_be_empty">Password must not be empty</string>
+<string name="password_do_not_match">Password do not match</string>
+    <string name="country_map_attribute">country map</string>
+    <string name="country_flag_attribute">country flag attribute</string>
 </resources>

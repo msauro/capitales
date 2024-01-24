@@ -2,7 +2,6 @@ package com.example.capitales.countryList
 
 import com.example.capitales.Country
 import com.example.capitales.api.CountriesApi.retrofitService
-import com.example.capitales.api.responses.CountryListResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
