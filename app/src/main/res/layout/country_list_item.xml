@@ -4,7 +4,7 @@
 
 
         <TextView
-            android:id="@+id/country_flag"
+            android:id="@+id/country_name_text"
             android:padding="16dp"
             android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"

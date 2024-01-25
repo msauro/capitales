@@ -2,7 +2,7 @@
 <resources>
 <string name="app_name">Capitales</string>
 <string name="borders">Limitrofes</string>
-<string name="area">Superficie: %d</string>
+<string name="area">Superficie: %.2f</string>
 <string name="translations">En Español:</string>
 <string name="region">Región</string>
 <string name="subregion">Subregion</string>

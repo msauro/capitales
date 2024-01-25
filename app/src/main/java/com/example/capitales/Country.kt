@@ -11,7 +11,7 @@ import kotlinx.parcelize.RawValue
 data class Country (
     val fifa:String?,
     val name: @RawValue CountryName,
-    val area:Double,
+    val area:Float,
     val flag: String,
     val flags: @RawValue Flags,
     val region: String,
@@ -22,22 +22,28 @@ data class Country (
     val maps: @RawValue Maps
 ) : Parcelable
 
+
+@Parcelize
 data class CountryName(
     val common: String,
     val official: String
-)
+) : Parcelable
+
+@Parcelize
 data class Maps(
   val googleMaps: String
-)
+) : Parcelable
 
+@Parcelize
 data class Flags(
     val png: String
-)
-
+): Parcelable
+@Parcelize
 data class Translation(
     val spa: LanguageTranslation
-)
+) : Parcelable
 
+@Parcelize
 data class LanguageTranslation(
     val official: String
-)
+) : Parcelable

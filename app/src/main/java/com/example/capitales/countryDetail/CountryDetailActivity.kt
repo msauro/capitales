@@ -25,6 +25,8 @@ class CountryDetailActivity : AppCompatActivity() {
             return
         }
         //binding.country MINUTO 8.47 VER VERRRRRRRRRR
+        binding.population.text = getString(R.string.population, country.population)
+        binding.area.text = getString(R.string.area, country.area) //CON ESTO FALLA
         binding.country = country
     }
 }
