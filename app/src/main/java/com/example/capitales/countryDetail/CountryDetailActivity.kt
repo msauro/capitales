@@ -1,10 +1,12 @@
 package com.example.capitales.countryDetail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.capitales.Country
 import com.example.capitales.R
+import com.example.capitales.countryList.CountryAdapter
 import com.example.capitales.databinding.ActivityCountryDetailBinding
 
 class CountryDetailActivity : AppCompatActivity() {
@@ -19,14 +21,22 @@ class CountryDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val country = intent?.extras?.getParcelable<Country>(COUNTRY_KEY)
+
         if (country == null){
             Toast.makeText(this,"Country not found", Toast.LENGTH_SHORT).show()
             finish()
             return
         }
-        //binding.country MINUTO 8.47 VER VERRRRRRRRRR
+        val adapter = CountryAdapter()
+        adapter.setOnItemClickListener {
+            //pasar el country a country detail activity, para esto el obj debe ser parelable (para pasar un objeto entre activities)
+            val intent = Intent(this, CountryDetailActivity::class.java)
+            intent.putExtra(COUNTRY_KEY, it)
+            startActivity(intent)
+        }
+
         binding.population.text = getString(R.string.population, country.population)
-        binding.area.text = getString(R.string.area, country.area) //CON ESTO FALLA
+        binding.area.text = getString(R.string.area, country.area)
         binding.country = country
     }
 }

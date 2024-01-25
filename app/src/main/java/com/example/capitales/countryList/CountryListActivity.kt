@@ -43,24 +43,16 @@ class CountryListActivity : AppCompatActivity() {
         countryListViewModel.status.observe(this){
             status ->
             when(status){
-                ApiResponseStatus.LOADING -> {
-                    loadingWheel.visibility = View.VISIBLE
-                }
-
-                ApiResponseStatus.ERROR -> {
+                is ApiResponseStatus.Error -> {
                     loadingWheel.visibility = View.GONE
-                    Toast.makeText(this, "Error al descargar los paises", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, status.message, Toast.LENGTH_SHORT).show()
                 }
-                ApiResponseStatus.SUCCESS -> {
+                is ApiResponseStatus.Loading -> loadingWheel.visibility = View.VISIBLE
+                is ApiResponseStatus.Success ->{
                     loadingWheel.visibility = View.GONE
-
                 }
-                else -> {
-                    loadingWheel.visibility = View.GONE
-                    Toast.makeText(this,"Status desconocido", Toast.LENGTH_SHORT).show()
-                }
-
             }
+
 
 
         }

@@ -22,17 +22,19 @@ class CountryListViewModel: ViewModel() {
     init {
         downloadCountries()
     }
+
     private fun downloadCountries(){
         viewModelScope.launch {
-            _status.value = ApiResponseStatus.LOADING
-            try {
-                _countryList.value = countryRepository.downloadCountries()
-                _status.value = ApiResponseStatus.SUCCESS
-
-            }catch (e:Exception){
-                _status.value = ApiResponseStatus.ERROR
-            }
+            _status.value = ApiResponseStatus.Loading()
+            handleResponseStatus(countryRepository.downloadCountries())
 
         }
+    }
+    private fun handleResponseStatus(apiResponseStatus: ApiResponseStatus) {
+        if (apiResponseStatus is ApiResponseStatus.Success){
+            _countryList.value = apiResponseStatus.countryList
+
+        }
+        _status.value = apiResponseStatus
     }
 }

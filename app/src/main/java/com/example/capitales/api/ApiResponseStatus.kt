@@ -1,7 +1,10 @@
 package com.example.capitales.api
 
-enum class ApiResponseStatus {
-    LOADING,
-    ERROR,
-    SUCCESS,
+import android.os.Message
+import com.example.capitales.Country
+
+sealed class ApiResponseStatus() {
+    class Success (val countryList: List<Country>): ApiResponseStatus()
+    class Loading (): ApiResponseStatus()
+    class Error (val message: String): ApiResponseStatus()
 }
