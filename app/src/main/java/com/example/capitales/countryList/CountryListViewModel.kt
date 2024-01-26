@@ -14,8 +14,8 @@ class CountryListViewModel: ViewModel() {
     val countryList: LiveData<List<Country>>
         get()=_countryList
 
-    private  val _status = MutableLiveData<ApiResponseStatus>()
-        val status: LiveData<ApiResponseStatus>
+    private  val _status = MutableLiveData<ApiResponseStatus<List<Country>>>()
+        val status: LiveData<ApiResponseStatus<List<Country>>>
         get()=_status
 
     private val countryRepository = CountryRepository()
@@ -30,10 +30,9 @@ class CountryListViewModel: ViewModel() {
 
         }
     }
-    private fun handleResponseStatus(apiResponseStatus: ApiResponseStatus) {
+    private fun handleResponseStatus(apiResponseStatus: ApiResponseStatus<List<Country>>) {
         if (apiResponseStatus is ApiResponseStatus.Success){
-            _countryList.value = apiResponseStatus.countryList
-
+            _countryList.value = apiResponseStatus.data!!
         }
         _status.value = apiResponseStatus
     }
