@@ -20,21 +20,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:id="@+id/country_map"
+                    android:id="@+id/country_coat"
                     android:layout_width="wrap_content"
-                    android:layout_height="200dp"
+                    android:layout_height="180dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="356dp"
                     android:adjustViewBounds="true"
                     android:elevation="8dp"
-                    android:contentDescription="@string/country_map_attribute" />
+                    android:contentDescription="@string/coat" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/detail_info_background"
+                    android:background="#EEC1BEBE"
                     android:elevation="4dp"
                     android:orientation="vertical"
                     android:paddingBottom="8dp">
@@ -107,13 +107,13 @@
                                 android:textColor="@color/text_black"/>
 
                             <TextView
-                                android:id="@+id/temperament"
+                                android:id="@+id/countryBorders"
                                 style="@style/DetailSectionInfo"
                                 android:layout_width="117dp"
                                 android:layout_height="56dp"
                                 android:layout_marginTop="1dp"
                                 android:gravity="center"
-                                android:text="@{country.borders.toString()}"
+                                android:text="%d"
                                 tools:text="BOL,BRA,CHL,PRY,URY" />
 
                         </LinearLayout>
@@ -141,22 +141,22 @@
                                 android:layout_width="90dp"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@{country.region}"
+                                android:text="@{country.subregion}"
                                 tools:text="America" />
 
                             <TextView
                                 style="@style/DetailSectionName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/subregion" />
+                                android:text="@string/continents" />
 
                             <TextView
-                                android:id="@+id/intelligence"
+                                android:id="@+id/country_continents"
                                 style="@style/DetailSectionInfo"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="1dp"
-                                android:text="@{country.subregion}"
+                                android:text="%d"
                                 tools:text="Sud America" />
 
                         </LinearLayout>

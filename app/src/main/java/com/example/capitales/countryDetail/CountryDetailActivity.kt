@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import coil.load
 import com.example.capitales.Country
 import com.example.capitales.R
 import com.example.capitales.countryList.CountryAdapter
 import com.example.capitales.databinding.ActivityCountryDetailBinding
+
 
 class CountryDetailActivity : AppCompatActivity() {
 
@@ -38,5 +40,12 @@ class CountryDetailActivity : AppCompatActivity() {
         binding.population.text = getString(R.string.population, country.population)
         binding.area.text = getString(R.string.area, country.area)
         binding.country = country
+        binding.countryFlag.load(country.flags.png) //con esta libreria COIL, obtengo la imagen
+        binding.countryCoat.load(country.coatOfArms.png) // ESTO PARA MOSTRAR EL escudo
+        binding.countryBorders.text=(country.borders?.joinToString())
+        binding.countryContinents.text=(country.continents?.joinToString())
+        binding.closeButton.setOnClickListener {
+            finish()
+        }
     }
 }

@@ -18,7 +18,10 @@ data class Country (
     val subregion: String?,
     val translations: @RawValue Translation,
     val population: Long,
+    val startOfWeek: String,
     val borders: @RawValue List<String>?,
+    val continents: @RawValue List<String>,
+    val coatOfArms: @RawValue CoatOfArms,
     val maps: @RawValue Maps
 ) : Parcelable
 
@@ -34,6 +37,10 @@ data class Maps(
   val googleMaps: String
 ) : Parcelable
 
+@Parcelize
+data class CoatOfArms(
+    val png: String?
+): Parcelable
 @Parcelize
 data class Flags(
     val png: String
