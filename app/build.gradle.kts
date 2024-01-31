@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id ("kotlin-parcelize")
+    id("androidx.navigation.safeargs")
+
 
 }
 
@@ -60,8 +62,13 @@ dependencies {
     implementation("com.squareup.moshi:moshi-kotlin:1.9.1")
     implementation("com.squareup.moshi:moshi:1.12.0")
 
-    //Coil
+    //Coil para imagenes
     implementation("io.coil-kt:coil:2.5.0")
+
+    //para navegar entre Fragments!
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
+
 
 
     //implementation ("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")

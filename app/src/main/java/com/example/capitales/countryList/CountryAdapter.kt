@@ -6,6 +6,7 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.capitales.Country
 import com.example.capitales.databinding.ActivityCountryListBinding
 import com.example.capitales.databinding.CountryListItemBinding
@@ -38,10 +39,10 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
 
     inner class CountryViewHolder(private val binding: CountryListItemBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(country: Country){
-            binding.countryNameText.text = country.name.common
-            binding.countryNameText.setOnClickListener{
+            binding.countryListItemLayout.setOnClickListener{
             onItemClickListener?.invoke(country)
             }
+            binding.countryFlags.load(country.flags.png)
         }
     }
 }

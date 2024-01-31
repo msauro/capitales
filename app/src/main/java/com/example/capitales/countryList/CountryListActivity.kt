@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.capitales.api.ApiResponseStatus
 import com.example.capitales.countryDetail.CountryDetailActivity
 import com.example.capitales.countryDetail.CountryDetailActivity.Companion.COUNTRY_KEY
 import com.example.capitales.databinding.ActivityCountryListBinding
 
+private const val GRID_SPAN_COUNT = 3
 class CountryListActivity : AppCompatActivity() {
 
     private val countryListViewModel: CountryListViewModel by viewModels()
@@ -24,7 +26,7 @@ class CountryListActivity : AppCompatActivity() {
         val loadingWheel = binding.loadingWheel
 
         val recycler = binding.countryRecycler
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = GridLayoutManager(this, GRID_SPAN_COUNT)
 
         val adapter = CountryAdapter()
         adapter.setOnItemClickListener {
