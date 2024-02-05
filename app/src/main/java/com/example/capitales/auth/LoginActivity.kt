@@ -26,4 +26,12 @@ class LoginActivity : AppCompatActivity(), LoginFragment.LoginFragmentActions, S
         findNavController(R.id.nav_host_fragment)
             .navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment())
     }
+
+    override fun onSignUpFieldsValidated(
+        email: String?,
+        password: String,
+        passwordConfirmation: String
+    ) {
+        TODO("Not yet implemented")
+    }
 }

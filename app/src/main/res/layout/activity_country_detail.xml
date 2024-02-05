@@ -37,9 +37,9 @@
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
                         android:padding="8dp"
-                        android:text="@{country.name.official}"
+                        android:text="@{country.translations.spa.official}"
                         android:textColor="@color/text_black"
-                        android:textSize="32sp" tools:text="Argentine Republic"/>
+                        android:textSize="32sp" tools:text="Argentina"/>
 
                     <ImageView
                         android:id="@+id/country_flag"
@@ -195,8 +195,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="1dp"
                                 android:gravity="center"
-                                android:text="@{country.translations.spa.official}"
-                                tools:text="Argentina" />
+                                android:text="@{country.name.official}"
+                                tools:text="Argentine Republic" />
 
                         </LinearLayout>
                     </LinearLayout>

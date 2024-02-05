@@ -17,6 +17,7 @@ class SignUpFragment : Fragment() {
 
     interface SignUpFragmentActions {
         fun onReturnToLoginClick()
+        fun onSignUpFieldsValidated(email: String?,password: String, passwordConfirmation: String)
     }
 
     private lateinit var signUpFragmentActions: SignUpFragmentActions
@@ -78,6 +79,8 @@ class SignUpFragment : Fragment() {
             binding.passwordInput.error = getString(R.string.password_do_not_match)
             return
         }
+
+        signUpFragmentActions.onSignUpFieldsValidated(email, password, passwordConfirmation)
     }
 
     private fun isValidEmail(email: String?): Boolean{

@@ -23,7 +23,16 @@ data class Country (
     val continents: @RawValue List<String>,
     val coatOfArms: @RawValue CoatOfArms,
     val maps: @RawValue Maps
-) : Parcelable
+) : Parcelable, Comparable<Country>{
+    override fun compareTo(other: Country): Int {
+        return if (this.name.common > other.name.common) {
+            1
+        }else{
+            -1
+        }
+    }
+
+}
 
 
 @Parcelize
