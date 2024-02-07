@@ -18,18 +18,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capitales">
         <activity
+            android:name=".WholeImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".searchCountry.SearchCountryActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".auth.LoginActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".countryDetail.CountryDetailActivity"
             android:exported="false" />
         <activity
             android:name=".countryList.CountryListActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -38,7 +42,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

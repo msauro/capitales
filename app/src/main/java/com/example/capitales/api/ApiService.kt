@@ -7,6 +7,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -20,6 +21,9 @@ private val retrofit = Retrofit.Builder()
 interface ApiService{
     @GET(GET_ALL_COUNTRIES)
     suspend fun getAllCountries(): List<Country>
+
+    @GET("{name}")
+    suspend fun searchCountry(@Path("name") name: String): Country
 }
 
 object CountriesApi{

@@ -29,4 +29,10 @@
     <string name="coat">Coat</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photo_icon">photo icon</string>
+    <string name="home_icon">home icon</string>
+    <string name="search_icon">search icon</string>
+    <string name="enter_your_text">Enter your text</string>
+    <string name="search">Search</string>
+    <string name="photo">Photo</string>
 </resources>

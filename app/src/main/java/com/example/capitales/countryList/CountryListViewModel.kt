@@ -36,4 +36,11 @@ class CountryListViewModel: ViewModel() {
         }
         _status.value = apiResponseStatus
     }
+
+    private fun downloadCountry(countryName: String){
+        viewModelScope.launch {
+            _status.value = ApiResponseStatus.Loading()
+           // handleResponseStatus(countryRepository.downloadCountry(countryName))
+        }
+    }
 }
