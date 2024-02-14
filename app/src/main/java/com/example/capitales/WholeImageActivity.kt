@@ -17,9 +17,9 @@ class WholeImageActivity : AppCompatActivity() {
         val binding = ActivityWholeImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val photoUri = intent.extras?.getString(PHOTO_URI_KEY) ?: ""
+        val photoUri = intent.extras?.getString(PHOTO_URI_KEY)
         val uri = Uri.parse(photoUri)
-        val path = uri.path  // NO LLEGA ACA
+        val path = uri.path
 
         if(path == null){
             Toast.makeText(this, "Error showing image no photo uri",

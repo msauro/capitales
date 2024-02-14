@@ -35,4 +35,5 @@
     <string name="enter_your_text">Enter your text</string>
     <string name="search">Search</string>
     <string name="photo">Photo</string>
+    <string name="title_activity_country_detail_compose">CountryDetailComposeActivity</string>
 </resources>

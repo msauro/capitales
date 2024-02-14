@@ -6,16 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.capitales.Country
 import com.example.capitales.api.ApiResponseStatus
+import com.example.capitales.api.dto.CountryDTO
 import kotlinx.coroutines.launch
 
 class CountryListViewModel: ViewModel() {
 
-    private  val _countryList = MutableLiveData<List<Country>>()
-    val countryList: LiveData<List<Country>>
+    private  val _countryList = MutableLiveData<List<CountryDTO>>()
+    val countryList: LiveData<List<CountryDTO>>
         get()=_countryList
 
-    private  val _status = MutableLiveData<ApiResponseStatus<List<Country>>>()
-        val status: LiveData<ApiResponseStatus<List<Country>>>
+    private  val _status = MutableLiveData<ApiResponseStatus<List<CountryDTO>>>()
+        val status: LiveData<ApiResponseStatus<List<CountryDTO>>>
         get()=_status
 
     private val countryRepository = CountryRepository()
@@ -30,7 +31,7 @@ class CountryListViewModel: ViewModel() {
 
         }
     }
-    private fun handleResponseStatus(apiResponseStatus: ApiResponseStatus<List<Country>>) {
+    private fun handleResponseStatus(apiResponseStatus: ApiResponseStatus<List<CountryDTO>>) {
         if (apiResponseStatus is ApiResponseStatus.Success){
             _countryList.value = apiResponseStatus.data!!
         }

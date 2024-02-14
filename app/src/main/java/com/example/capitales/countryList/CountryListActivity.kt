@@ -31,7 +31,7 @@ class CountryListActivity : AppCompatActivity() {
 
         val adapter = CountryAdapter()
         adapter.setOnItemClickListener {
-            //pasar el country a country detail activity, para esto el obj debe ser parelable (para pasar un objeto entre activities)
+            //pasar el country a country detail activity, para esto el obj debe ser parcelable (para pasar un objeto entre activities)
             val intent = Intent(this, CountryDetailActivity::class.java)
             intent.putExtra(COUNTRY_KEY, it)
             startActivity(intent)

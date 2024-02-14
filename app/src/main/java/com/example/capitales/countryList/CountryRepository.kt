@@ -3,10 +3,11 @@ package com.example.capitales.countryList
 import com.example.capitales.Country
 import com.example.capitales.api.ApiResponseStatus
 import com.example.capitales.api.CountriesApi.retrofitService
+import com.example.capitales.api.dto.CountryDTO
 import com.example.capitales.api.makeNetworkCall
 
 class CountryRepository { // deja de devolver unicamente los countries, ahora devuelve tambien el estado
-    suspend fun downloadCountries(): ApiResponseStatus<List<Country>>
+    suspend fun downloadCountries(): ApiResponseStatus<List<CountryDTO>>
             = makeNetworkCall {
         retrofitService.getAllCountries().sorted()
     }

@@ -42,7 +42,7 @@ class CountryAdapter: ListAdapter<Country, CountryAdapter.CountryViewHolder>(Dif
             binding.countryListItemLayout.setOnClickListener{
             onItemClickListener?.invoke(country)
             }
-            binding.countryFlags.load(country.flags.png)
+            binding.countryFlags.load(country.flags)
         }
     }
 }

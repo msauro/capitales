@@ -11,10 +11,12 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.lifecycle.LifecycleOwner
 import com.example.capitales.countryList.CountryListActivity
 import com.example.capitales.databinding.ActivityMainBinding
 import com.example.capitales.searchCountry.SearchCountryActivity
@@ -178,8 +180,23 @@ class MainActivity : AppCompatActivity() {
             preview.setSurfaceProvider(binding.cameraPreview.surfaceProvider)
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
 
+            val imageAnalysis = ImageAnalysis.Builder()
+                // enable the following line if RGBA output is needed.
+                // .setOutputImageFormat(ImageAnalysis.OUTPUT_IMAGE_FORMAT_RGBA_8888)
+                .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+                .build()
+            imageAnalysis.setAnalyzer(cameraExecutor) { imageProxy ->
+                val rotationDegrees = imageProxy.imageInfo.rotationDegrees
+                // insert your code here.
+
+                // after done, release the ImageProxy object
+                imageProxy.close()
+            }
+
+            cameraProvider.bindToLifecycle(this as LifecycleOwner, cameraSelector, imageAnalysis, preview)
+
             cameraProvider.bindToLifecycle(
-                this, cameraSelector, preview, imageCapture
+                this, cameraSelector, preview, imageCapture, imageAnalysis
             )
         }, ContextCompat.getMainExecutor(this))
     }

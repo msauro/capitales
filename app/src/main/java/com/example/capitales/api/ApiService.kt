@@ -2,6 +2,7 @@ package com.example.capitales.api
 import com.example.capitales.BASE_URL
 import com.example.capitales.Country
 import com.example.capitales.GET_ALL_COUNTRIES
+import com.example.capitales.api.dto.CountryDTO
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -20,7 +21,7 @@ private val retrofit = Retrofit.Builder()
 
 interface ApiService{
     @GET(GET_ALL_COUNTRIES)
-    suspend fun getAllCountries(): List<Country>
+    suspend fun getAllCountries(): List<CountryDTO>
 
     @GET("{name}")
     suspend fun searchCountry(@Path("name") name: String): Country
