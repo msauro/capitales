@@ -18,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capitales">
         <activity
+            android:name=".countryDetail.CountryDetailComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_country_detail_compose"
+            android:theme="@style/Theme.Capitales" />
+        <activity
             android:name=".WholeImageActivity"
             android:exported="false" />
         <activity
