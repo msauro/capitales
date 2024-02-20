@@ -80,8 +80,8 @@ dependencies {
     implementation("io.coil-kt:coil:2.5.0")
 
     //para navegar entre Fragments!
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     implementation ("androidx.activity:activity-ktx:1.8.2")
 
@@ -112,6 +112,9 @@ dependencies {
     // UI Tests
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Coil para JetPack
+    implementation("io.coil-kt:coil-compose:1.3.1")
 
 
 
